@@ -42,7 +42,7 @@ public class MyAdapter extends BaseAdapter {
             convertView = mAct.getLayoutInflater().inflate(R.layout.item,null,false);
             holder = new MyHolder();
         }else {
-
+            holder = (MyHolder) convertView.getTag();
         }
         return null;
     }
