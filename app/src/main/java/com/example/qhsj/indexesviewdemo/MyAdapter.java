@@ -1,11 +1,13 @@
 package com.example.qhsj.indexesviewdemo;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 /**
  * Created by Chris on 2017/7/11.
@@ -39,15 +41,20 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         MyHolder holder ;
         if (convertView == null){
-            convertView = mAct.getLayoutInflater().inflate(R.layout.item,null,false);
             holder = new MyHolder();
+            convertView = mAct.getLayoutInflater().inflate(R.layout.item,null,true);
+            holder.tvItem = (TextView) convertView.findViewById(R.id.tvItem);
+            convertView.setTag(holder); // 这个绝对不能忘记了！！！
         }else {
             holder = (MyHolder) convertView.getTag();
         }
-        return null;
+        Log.e("chris",holder + "");
+        Log.e("chris",holder.tvItem + "");
+        holder.tvItem.setText("item" + position);
+        return convertView;
     }
 
     class MyHolder {
-
+        public TextView tvItem;
     }
 }
