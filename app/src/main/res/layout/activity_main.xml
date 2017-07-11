@@ -14,7 +14,7 @@
         android:divider="@drawable/divider_friend"
         android:dividerHeight="1px" />
 
-    <com.pigamewallet.view.IndexesView
+    <com.example.qhsj.indexesviewdemo.view.IndexesView
         android:id="@+id/indexesView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
